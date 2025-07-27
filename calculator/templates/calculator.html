@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e8eded, #f1cc51);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .calculator-frame {
+      background-color: rgba(247, 235, 141, 0.964);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      width: 320px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 28px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #00b894;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #019875;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f1f1f1;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-frame">
+    <h1>Mini Calculator</h1>
+    <form method="post">
+      {% csrf_token %}
+      <input type="number" name="a" placeholder="Enter first number" required>
+      <input type="number" name="b" placeholder="Enter second number" required>
+
+      <select name="operator" required>
+        <option value="">Select Operation</option>
+        <option value="Addition">Addition (+)</option>
+        <option value="Subtraction">Subtraction (-)</option>
+        <option value="Multiplication">Multiplication (×)</option>
+        <option value="Division">Division (÷)</option>
+      </select>
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not None %}
+      <div class="result-box">
+        Result: {{ result }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
