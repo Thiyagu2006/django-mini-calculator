@@ -1,7 +1,5 @@
 from django.shortcuts import render
 
-def home(request):
-    return HttpResponse("Welcome to my Django Calculator!")
 def calculator(request):
     result = None
     if request.method == 'POST':
