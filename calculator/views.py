@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def calculator(request):
-    return render(request, 'calculator.html')
+    result = None
     if request.method == 'POST':
         a = int(request.POST.get('a'))
         b = int(request.POST.get('b'))
