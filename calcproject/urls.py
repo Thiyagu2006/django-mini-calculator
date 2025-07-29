@@ -20,6 +20,6 @@ from django.shortcuts import redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('thiyagu/mysimplecalulator/app', views.calculator, name='calculator'),
-    path('', views.home, name='home'),  # 👈 show simple message
+    path('', lambda request: redirect('calculator')), 
 ]
 
