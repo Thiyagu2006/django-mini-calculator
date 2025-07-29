@@ -16,12 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from calculator import views
+from mysimplecalulator import views
 
 urlpatterns = [
     path('', views.calculator, name='home'), 
     path('admin/', admin.site.urls),
-    path('thiyagu/calcproject/calclator', views.calculator, name='calculator'),
+    path('thiyagu/mysimplecalulator/app', views.calculator, name='calculator'),
 
 ]
 
