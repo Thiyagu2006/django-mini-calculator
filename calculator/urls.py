@@ -1,6 +1,5 @@
 from django.urls import path
-from mysimplecalculator import views
-
+from calculator import views
 urlpatterns = [
-        path('thiyagu/mysimplecalulator/app', views.calculator, name='calculator'),
+    path('thiyagu/mysimplecalulator/app', views.calculator, name= 'calculator')
 ]
