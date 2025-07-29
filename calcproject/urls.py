@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from calcproject import views
+from calculator import views
 
 urlpatterns = [
     path('', views.calculator, name='home'), 
