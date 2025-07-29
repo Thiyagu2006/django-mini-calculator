@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-97_*!ot%4^e4#8500y@8odt281ryk1ffwlbdudp-@)9wz07**j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-mini-calculator.onrender.com']
+
 
 
 # Application definition
